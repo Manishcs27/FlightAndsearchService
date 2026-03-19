@@ -1,0 +1,24 @@
+{
+  "name": "flightandsearch",
+  "version": "1.0.0",
+  "description": "Micro Service for handling FLIGHT CRUD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manishcs27/Air_Ticket_Booking.git"
+  },
+  "author": "Manish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manishcs27/Air_Ticket_Booking/issues"
+  },
+  "homepage": "https://github.com/Manishcs27/Air_Ticket_Booking#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
