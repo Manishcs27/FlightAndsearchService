@@ -10,8 +10,8 @@
      repository/
 
 
-     #Welcome to Flight Search Service
-     ##project Setup
+     ## Welcome to Flight Search Service
+     # project Setup
      --colne the project on your local
      -- execute `npm install`  on the same path  as of your root directory of download project
      --Create a `.env` file in the root directory and add following environment variable
@@ -30,3 +30,12 @@
   once you have added your db config as listed above, go to the src folder from your terminal and execute `npx sequlize db:create` 
 
 
+## DB Design 
+  - Airplane table 
+  - Flight Table
+  - Airport
+  - City
+
+  - A Flight belongs to an airplane  but one airplane can be used to multiple flights
+  - A city has many airports but one airport belongs to city
+  - One Airport can have many flights,but a flight  belongs to one airport
