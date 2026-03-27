@@ -17,7 +17,7 @@
      --Create a `.env` file in the root directory and add following environment variable
           -PORT=3000
     --inside the 'src/config' folder create a new file `config.json` and then add the following piece of json
-    ...
+    ```
   "development": {
     "username": "root",
     "password": "your_password",
@@ -25,9 +25,14 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-  ...
+  
+
+  ```
 
   once you have added your db config as listed above, go to the src folder from your terminal and execute `npx sequlize db:create` 
+  and then execute
+  `npx sequelize db:migrate`
+  ```
 
 
 ## DB Design 
