@@ -1,5 +1,6 @@
 const airplane = require('../models/airplane');
 const {FlightRepository , AirplaneRepository} = require('../repository/index');
+const logger = require('../utils/logger.js');
 
 const { compareTime } = require('../utils/helper')
 class FlightService {
@@ -9,7 +10,7 @@ class FlightService {
     }
     async createFlight(data){
         try {
-            if(!compareTime(data.arrivalTime,departureTime)){
+            if(!compareTime(data.arrivalTime ,data.departureTime)){
                 throw {error: 'Arrival Time should not be less than departure'}
             }
             const airplane = await this.airplaneRepository.getAirplane(data.airplaneId);
@@ -21,8 +22,19 @@ class FlightService {
             throw error;
         }
 }
-async getFlights(){
-    //todo
+async getAllFlightData(data){
+    
+    try {
+        const flights = await this.flightRepository.getAllFlights(data);
+        return flights;
+
+    } catch (error) {
+        console.log("Something went wrong in service layer",error);
+        logger.error("Error in fetching flights",error);
+
+            throw error;
+        
+    }
 
 }
 }
