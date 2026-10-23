@@ -15,7 +15,7 @@
      --colne the project on your local
      -- execute `npm install`  on the same path  as of your root directory of download project
      --Create a `.env` file in the root directory and add following environment variable
-          -PORT=3003
+          -PORT=3000
     --inside the 'src/config' folder create a new file `config.json` and then add the following piece of json
     ```
   "development": {
