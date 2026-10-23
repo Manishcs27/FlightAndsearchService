@@ -12,7 +12,7 @@ const setupAndStartServer = async () => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true})); 
     app.use('/api', ApiRoutes);  
-    app.listen(PORT,async () => {
+    app.listen(PORT, '127.0.0.1', async () => {
         console.log(`Server is running on port ${PORT}`);
         if(process.env.DB_SYNC){
              db.sequelize.sync({alter: true});

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon src/index",
+    "seed:sample-flights": "npx sequelize-cli db:seed --seed 20261003120000-add-sample-flights.js --config src/config/config.json --seeders-path src/seeders",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
