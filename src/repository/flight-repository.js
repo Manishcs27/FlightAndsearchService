@@ -1,4 +1,4 @@
-const {Flights} = require('../models/index');
+const {Flights, Airport, City} = require('../models/index');
 const {Op} = require('sequelize');
 
 class FlightRepository {
@@ -50,7 +50,21 @@ class FlightRepository {
         try {
          const filterObject = this.#createFilter(filter);
            const flight = await Flights.findAll({
-                where: filterObject
+                where: filterObject,
+                include: [
+                    {
+                        model: Airport,
+                        as: 'departureAirport',
+                        attributes: ['id', 'name'],
+                        include: [{model: City, attributes: ['name']}]
+                    },
+                    {
+                        model: Airport,
+                        as: 'arrivalAirport',
+                        attributes: ['id', 'name'],
+                        include: [{model: City, attributes: ['name']}]
+                    }
+                ]
            });
                     return flight;
                 } catch (error) {
